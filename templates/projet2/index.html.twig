@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Projet2Controller!{% endblock %}
+
+{% block body %}
+
+<div>
+<style>
+		.accueil{
+background-image: url('https://eskipaper.com/images/yellow-car-2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 80%;
+  height: 500px;
+  text-align: center;
+
+		}
+		.card{
+			text-align: center;
+		}
+</style>
+		
+<div class="accueil ">
+<h2>BIENVENUE</h2>
+<h6 class="mb-5 red">Location Voitures 24h/24h et 7j/7j</h6>
+					
+</div>
+</div>
+ {% for Vehicule in tabVehicules %}
+    
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ Vehicule.photo }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ Vehicule.titre }} </h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac lorem hendrerit, tempus turpis vitae, aliquam massa. Fusce euismod ipsum ut dui gravida,</p>
+        <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endfor %}
+
+{% endblock %}

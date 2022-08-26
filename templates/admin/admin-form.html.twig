@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>
+{% if editMode %}
+    Modification d'un vehicule
+{% else %}
+    Ajout un vehicule
+{% endif %}
+</h1>
+
+
+{{ form_start(formVehicule, {
+    attr:{
+        novalidate: 'novalidate'
+    }
+}) }}
+
+{{ form_row(formVehicule.titre, {
+    label: "Titre",
+    attr: {
+        placeholder: "Titre vehicule"
+    }
+}) }}
+{{ form_row(formVehicule.marque,{
+    label: "marque",
+    attr: {
+        placeholder: "marque de vehicule"
+    }
+})  }}
+
+{{ form_row(formVehicule.modele) }}
+{{ form_row(formVehicule.photo) }}
+{{ form_row(formVehicule.description) }}
+{{ form_row(formVehicule.prix_journalier) }}
+
+
+
+
+{% if editMode %}
+<button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+{% else %}
+<button type="submit" class="btn btn-primary mt-2">Ajouter</button>
+{% endif %}
+
+
+{{ form_end(formVehicule) }}
+
+{% endblock %}
